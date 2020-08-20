@@ -33,6 +33,13 @@ RUN set -x; \
         && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
+# Install ptvsd and activate remote-attach for debugging
+RUN set -x; \
+        pip3 install ptvsd \
+        && echo "import ptvsd" >> /usr/lib/python3/dist-packages/odoo/addons/__init__.py \
+        && echo "ptvsd.enable_attach(address=('0.0.0.0', 3000))" >> /usr/lib/python3/dist-packages/odoo/addons/__init__.py \
+        && echo "ptvsd.wait_for_attach()" >> /usr/lib/python3/dist-packages/odoo/addons/__init__.py
+
 # install latest postgresql-client
 RUN set -x; \
         echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
