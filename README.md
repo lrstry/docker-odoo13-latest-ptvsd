@@ -1,7 +1,4 @@
-**References:**
-
-- This project: [lrstry/docker-odoo13-latest-ptvsd](https://github.com/lrstry/docker-odoo13-latest-ptvsd) | [Docker Hub Page](https://hub.docker.com/repository/docker/lrstry/odoo13-latest-ptvsd)
-- Fork of: [odoo/docker](https://github.com/odoo/docker) | [Docker Hub Page](https://hub.docker.com/_/odoo)
+**Fork of:** [odoo/docker](https://github.com/odoo/docker) | [Docker Hub Page](https://hub.docker.com/_/odoo)
 
 **The changes I did to this fork:**
 
