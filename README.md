@@ -1,11 +1,16 @@
-Docker Hub: https://hub.docker.com/repository/docker/lrstry/odoo13-latest-ptvsd
+**References:**
 
-The changes I did to this fork:
+Fork of: [odoo/docker](https://github.com/odoo/docker) | [Docker Hub Page](https://hub.docker.com/_/odoo)
+
+self.GitHub: https://github.com/lrstry/docker-odoo13-latest-ptvsd
+self.DockerHub: https://hub.docker.com/repository/docker/lrstry/odoo13-latest-ptvsd
+
+**The changes I did to this fork:**
 
 - Offer only ODOO 13.0, with 'latest' version
 - Add ptvsd to image and implement attach-hook for remote debugging
 
-Setup:
+**Setup:**
 
 ```shell
 docker pull lrstry/odoo13-latest-ptvsd
@@ -13,7 +18,7 @@ docker run -d -p 5432:5432 -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e PO
 docker run -p 8069:8069 -p 3000:3000 -v /Users/lrstry/Documents/SwaF/custom_swaf:/mnt/extra-addons --name odoo --link db:db -t lrstry/odoo13-latest-ptvsd
 ```
 
-Debugging with VSCode using following launch.json:
+**Debugging with VSCode using following launch.json:**
 
 ```json
 {
