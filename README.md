@@ -1,4 +1,4 @@
-Docker Hub: https://hub.docker.com/repository/docker/lrstry/odoo13-latest-ptvsd,
+Docker Hub: https://hub.docker.com/repository/docker/lrstry/odoo13-latest-ptvsd
 
 The changes I did to this fork:
 
