@@ -33,9 +33,9 @@ RUN set -x; \
         && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
-# Install ptvsd 
+# Install debugpy 
 RUN set -x; \
-        pip3 install ptvsd
+        pip3 install -U debugpy
 
 # install latest postgresql-client
 RUN set -x; \
@@ -74,11 +74,6 @@ RUN chown odoo /etc/odoo/odoo.conf
 RUN mkdir -p /mnt/extra-addons \
         && chown -R odoo /mnt/extra-addons
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
-
-# Implement remote-attach hook for debugging
-RUN set -x; \
-        echo "import ptvsd" >> /usr/lib/python3/dist-packages/odoo/addons/__init__.py \
-        && echo "ptvsd.enable_attach(address=('0.0.0.0', 3000))" >> /usr/lib/python3/dist-packages/odoo/addons/__init__.py
 
 # Expose Odoo services
 EXPOSE 8069 8071
