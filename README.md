@@ -2,7 +2,7 @@
 
 **The changes I did to this fork:**
 
-- Offer ODOO 13.0, with latest Nightly-build version (not automated yet, I bump the Release-ID up manually)
+- Offer ODOO 13, with latest Nightly-build version (not automated yet, I bump the Release-ID up manually)
 - Add ptvsd to image and implement attach-hook for remote debugging
 
 **Setup:**
