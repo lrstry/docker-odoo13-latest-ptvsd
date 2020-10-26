@@ -10,7 +10,7 @@
 ```shell
 docker pull lrstry/odoo13-latest-ptvsd
 docker run -d -p 5432:5432 -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:10
-docker run -p 8069:8069 -p 3000:3000 -v /Users/lrstry/Documents/SwaF/custom_swaf:/mnt/extra-addons --name odoo --link db:db -t lrstry/odoo13-latest-ptvsd
+docker run -p 8069:8069 -p 3000:3000 -v /path/to/local/extra-addons:/mnt/extra-addons --name odoo --link db:db -t lrstry/odoo13-latest-ptvsd
 ```
 
 **Debugging with VSCode using following launch.json:**
